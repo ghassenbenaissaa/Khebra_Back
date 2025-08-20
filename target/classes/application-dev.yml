@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/khebra
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: test
+    password: test
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: NGZmNDI2MTAtNTU5YS00YmJjLThlZTktNDI1MTZiNGFlZjNh
+      expiration: 8640000
+      refresh-expiration: 604800000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/auth/activate-account?token=
+      password-reset-url: http://localhost:4200/auth/reset-password?token=
+
+server:
+  port: 8088
+
+cloudinary:
+  cloud_name: db0stnc2a
+  api_key: 963675327866169
+  api_secret: fmwZJzq2GGkZla1YnBJ_uD8uVpk
+
